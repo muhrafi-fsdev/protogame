@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neo Shangri-La - Game RPG Berbasis Teks dengan tema Cyberpunk. Jelajahi kota, berdagang, crafting, dan selesaikan misi!">
+    <title>Neo Shangri-La | Cyberpunk Text RPG</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🌃</text></svg>">
+</head>
+<body>
+    <div class="game-container">
+        <!-- ============ TOP BAR ============ -->
+        <div class="top-bar">
+            <div class="player-info">
+                <div class="level-badge" id="player-level">1</div>
+                <div class="player-name-section">
+                    <span class="name" id="player-name">CyberNova</span>
+                    <span class="title" id="player-title">Pendatang Baru</span>
+                </div>
+            </div>
+
+            <div class="exp-section">
+                <div class="exp-bar-container">
+                    <div class="exp-fill" id="exp-fill" style="width: 0%"></div>
+                </div>
+                <div class="exp-text">
+                    <span><span id="player-exp-current">0</span> / <span id="player-exp-max">1,000</span></span>
+                    <span id="exp-percent">0%</span>
+                </div>
+            </div>
+
+            <div class="currency-section">
+                <div class="currency">
+                    <span class="value" id="player-btc">5,000</span>
+                    <span class="label">BTC</span>
+                </div>
+                <div class="currency units">
+                    <span class="value" id="player-units">0</span>
+                    <span class="label">Unit</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ CONTENT AREA ============ -->
+        <div class="content-area">
+            <!-- LEFT PANEL - Inventory -->
+            <div class="left-panel">
+                <div class="left-panel-header">
+                    <button class="left-panel-header-tab active" data-tab="penyimpanan">PENYIMPANAN</button>
+                    <button class="left-panel-header-tab" data-tab="obrolan">OBROLAN</button>
+                </div>
+                <div id="left-panel-content">
+                    <!-- Dynamic inventory content -->
+                </div>
+            </div>
+
+            <!-- MAIN PANEL -->
+            <div class="main-panel">
+                <div id="main-panel-content">
+                    <!-- Dynamic main content -->
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL - Log/Notif -->
+            <div class="right-panel">
+                <div class="right-panel-header">
+                    <button class="right-tab" data-tab="obrolan" onclick="ui.switchRightTab('obrolan')">OBROLAN</button>
+                    <button class="right-tab" data-tab="geng" onclick="ui.switchRightTab('geng')">GENG</button>
+                    <button class="right-tab" data-tab="surat" onclick="ui.switchRightTab('surat')">SURAT</button>
+                    <button class="right-tab active" data-tab="notif" onclick="ui.switchRightTab('notif')">NOTIF.</button>
+                </div>
+                <div id="log-content">
+                    <div class="empty-state">Tekan lama untuk menghapus</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ BOTTOM NAV ============ -->
+        <nav class="bottom-nav">
+            <button class="nav-tab active" data-tab="map">
+                <span class="nav-icon">🗺️</span>
+                <span class="nav-label">PETA</span>
+            </button>
+            <button class="nav-tab" data-tab="inventory">
+                <span class="nav-icon">🎒</span>
+                <span class="nav-label">PENYIMPANAN</span>
+            </button>
+            <button class="nav-tab" data-tab="missions">
+                <span class="nav-icon">📋</span>
+                <span class="nav-label">MISI</span>
+            </button>
+            <button class="nav-tab" data-tab="chat">
+                <span class="nav-icon">💬</span>
+                <span class="nav-label">OBROLAN</span>
+            </button>
+            <button class="nav-tab" data-tab="account">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">AKUN</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal"></div>
+
+    <!-- JS FILES -->
+    <script src="js/utils.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
